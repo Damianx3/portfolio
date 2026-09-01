@@ -15,7 +15,8 @@ export type Experience = {
   period: string;
   description: string;
   bullets?: string[];
-  accent: string;
+  logo: string;
+  logoAlt: string;
 };
 
 export const experience: Record<"work" | "education", Experience[]> = {
@@ -31,7 +32,8 @@ export const experience: Record<"work" | "education", Experience[]> = {
         "Implemented JWT authentication and advisor-scoped REST APIs using FastAPI, SQLAlchemy, and PostgreSQL.",
         "Created decision-support reports with Recharts, including radar charts, category rankings, Pareto gap analysis, and AI-assisted roadmaps.",
       ],
-      accent: "TM",
+      logo: "/logos/tmac.png",
+      logoAlt: "TMAC logo",
     },
     {
       organization: "Brownsville Public Utilities Board",
@@ -43,7 +45,8 @@ export const experience: Record<"work" | "education", Experience[]> = {
         "Automated Power Query and DAX transformations, moving key reporting from monthly distributions to daily refreshes and reducing latency to about 24 hours.",
         "Developed 4 executive dashboards with about 15 reporting pages and 16+ interactive visualizations across affordability, workforce, customer experience, and reliability.",
       ],
-      accent: "BP",
+      logo: "/logos/bpub-icon.png",
+      logoAlt: "Brownsville Public Utilities Board logo",
     },
   ],
   education: [
@@ -52,7 +55,8 @@ export const experience: Record<"work" | "education", Experience[]> = {
       role: "B.S. in Computer Science",
       period: "Expected Dec 2026",
       description: "Bachelor of Science in Computer Science. GPA: 3.63.",
-      accent: "UT",
+      logo: "/logos/utrgv.png",
+      logoAlt: "UTRGV logo",
     },
   ],
 };

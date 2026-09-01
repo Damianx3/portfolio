@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { experience } from "@/data/portfolio";
 
@@ -20,7 +21,9 @@ export function ExperienceTabs() {
       <div className="experience-panel" id={`${activeTab}-panel`} role="tabpanel" aria-labelledby={`${activeTab}-tab`}>
         {experience[activeTab].map((item) => (
           <article className="experience-item" key={item.organization}>
-            <div className="company-mark" aria-hidden="true">{item.accent}</div>
+            <div className="company-mark">
+              <Image src={item.logo} alt={item.logoAlt} width={72} height={48} />
+            </div>
             <div className="experience-copy">
               <div className="experience-heading">
                 <div><h3>{item.organization}</h3><p>{item.role}</p></div>
