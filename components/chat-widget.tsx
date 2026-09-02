@@ -39,7 +39,21 @@ export function ChatWidget() {
 
     setMessages([...messages, newMessage]);
     setInput("");
+
+    setTimeout(() => {
+  const assistantMessage: ChatMessage = {
+    id: crypto.randomUUID(),
+    role: "assistant",
+    content: `I received your question: "${content}"`,
+  };
+
+    setMessages((currentMessages) => [
+        ...currentMessages,
+        assistantMessage,
+    ]);
+    }, 500);
   }
+
 
   return (
     <div className="chat-widget">
