@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 
 type ChatMessage = {
   id: string;
@@ -27,6 +27,11 @@ export function ChatWidget() {
 
   const [input, setInput] = useState("");
   const [isSending, setIsSending] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ block: "end" });
+  }, [messages, isSending]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -43,10 +48,9 @@ export function ChatWidget() {
       content,
     };
 
-    setMessages((currentMessages) => [
-      ...currentMessages,
-      userMessage,
-    ]);
+    const nextMessages = [...messages, userMessage];
+
+    setMessages(nextMessages);
 
     setInput("");
     setIsSending(true);
@@ -58,7 +62,13 @@ export function ChatWidget() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          message: content,
+          messages: nextMessages
+            .filter((message) => message.id !== "welcome")
+            .slice(-10)
+            .map(({ role, content: messageContent }) => ({
+              role,
+              content: messageContent,
+            })),
         }),
       });
 
@@ -143,6 +153,7 @@ export function ChatWidget() {
                 <p>{message.content}</p>
               </div>
             ))}
+            <div ref={messagesEndRef} aria-hidden="true" />
           </div>
 
           <form className="chat-form" onSubmit={handleSubmit}>
