@@ -91,7 +91,9 @@ a { color: inherit; text-decoration: none; } button { font: inherit; }
 .chat-panel { position: absolute; right: 0; bottom: calc(100% + 12px); width: 380px; height: min(520px,calc(100vh - 125px)); border: 1px solid rgba(205,205,232,.18); border-radius: 12px; display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; color: var(--text); background: rgba(24,24,37,.98); box-shadow: 0 24px 70px rgba(7,7,12,.48); backdrop-filter: blur(22px); animation: chat-in .2s ease both; }
 .chat-header { min-height: 62px; padding: 14px 17px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 20px; background: rgba(36,36,56,.72); }
 .chat-header strong { color: #efeff8; font-size: 13px; }
-.chat-header span { color: var(--green); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+.chat-close { padding: 5px 8px; border: 0; border-radius: 5px; color: var(--muted); background: transparent; cursor: pointer; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; transition: color .2s ease,background .2s ease; }
+.chat-close:hover { color: var(--peach); background: rgba(245,169,127,.08); }
+.chat-close:focus-visible { outline: 2px solid var(--peach); outline-offset: 2px; }
 .chat-messages { min-height: 0; padding: 18px; display: flex; flex-direction: column; gap: 13px; overflow-y: auto; overscroll-behavior: contain; scrollbar-color: var(--faint) transparent; }
 .chat-message { width: fit-content; max-width: 88%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 9px 9px 9px 3px; background: var(--panel); }
 .chat-message strong { display: block; margin-bottom: 3px; color: var(--peach); font-size: 9px; text-transform: uppercase; letter-spacing: .08em; }

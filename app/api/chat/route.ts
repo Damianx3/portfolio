@@ -97,14 +97,33 @@ export async function POST(request: Request) {
     content: message.content.trim(),
   }));
 
+  if (normalizedMessages.some((message) => !message.content)) {
+    return NextResponse.json(
+      { error: "Messages cannot be empty." },
+      { status: 400 },
+    );
+  }
+
   if (
     normalizedMessages.some(
       (message) =>
-        !message.content || message.content.length > 500,
+        message.role === "user" && message.content.length > 500,
     )
   ) {
     return NextResponse.json(
-      { error: "Each message must contain 1 to 500 characters." },
+      { error: "Your message must be 500 characters or fewer." },
+      { status: 400 },
+    );
+  }
+
+  if (
+    normalizedMessages.some(
+      (message) =>
+        message.role === "assistant" && message.content.length > 2000,
+    )
+  ) {
+    return NextResponse.json(
+      { error: "The conversation history is too large." },
       { status: 400 },
     );
   }

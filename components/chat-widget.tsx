@@ -6,6 +6,7 @@ type ChatMessage = {
   id: string;
   role: "user" | "assistant";
   content: string;
+  includeInContext?: boolean;
 };
 
 type ChatResponse = {
@@ -22,6 +23,7 @@ export function ChatWidget() {
       role: "assistant",
       content:
         "Hello! Ask me about Damian's experience, projects, or skills.",
+      includeInContext: false,
     },
   ]);
 
@@ -63,7 +65,7 @@ export function ChatWidget() {
         },
         body: JSON.stringify({
           messages: nextMessages
-            .filter((message) => message.id !== "welcome")
+            .filter((message) => message.includeInContext !== false)
             .slice(-10)
             .map(({ role, content: messageContent }) => ({
               role,
@@ -96,6 +98,7 @@ export function ChatWidget() {
           error instanceof Error
             ? error.message
             : "Sorry, I couldn't answer that. Please try again.",
+        includeInContext: false,
       };
 
       setMessages((currentMessages) => [
@@ -109,23 +112,25 @@ export function ChatWidget() {
 
   return (
     <div className="chat-widget">
-      <button
-        type="button"
-        className="chat-toggle"
-        aria-expanded={isOpen}
-        aria-controls="portfolio-chat"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="chat-toggle-copy">
-          <span>Chat with</span>
-          <strong>
-            <i className="chat-status-dot" aria-hidden="true" />
-            Damian Support
-          </strong>
-        </span>
+      {!isOpen && (
+        <button
+          type="button"
+          className="chat-toggle"
+          aria-expanded="false"
+          aria-controls="portfolio-chat"
+          onClick={() => setIsOpen(true)}
+        >
+          <span className="chat-toggle-copy">
+            <span>Chat with</span>
+            <strong>
+              <i className="chat-status-dot" aria-hidden="true" />
+              Damian Support
+            </strong>
+          </span>
 
-        <span className="chat-toggle-chevron" aria-hidden="true" />
-      </button>
+          <span className="chat-toggle-chevron" aria-hidden="true" />
+        </button>
+      )}
 
       {isOpen && (
         <section
@@ -135,7 +140,13 @@ export function ChatWidget() {
         >
           <header className="chat-header">
             <strong>Damian Support</strong>
-            <span>{isSending ? "Responding..." : "Online"}</span>
+            <button
+              type="button"
+              className="chat-close"
+              onClick={() => setIsOpen(false)}
+            >
+              Close
+            </button>
           </header>
 
           <div className="chat-messages" aria-live="polite">
