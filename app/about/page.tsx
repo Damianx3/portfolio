@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="shell about-page">
-      <p className="eyebrow reveal"><span>01</span> A little context</p>
+      <p className="eyebrow reveal">A little context</p>
       <h1 className="page-title reveal">About Me<span>.</span></h1>
       <section className="about-intro reveal delay-one">
         <figure className="profile-photo about-photo">

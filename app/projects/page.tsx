@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <main className="shell projects-page">
-      <p className="eyebrow reveal"><span>01</span> Selected work</p>
+      <p className="eyebrow reveal">Selected work</p>
       <div className="projects-intro reveal">
         <h1 className="page-title">Projects<span>.</span></h1>
         <p>Practical work across machine learning, data analysis, and software engineering—built around real questions and measurable outcomes.</p>
@@ -18,9 +18,8 @@ export default function ProjectsPage() {
 
       <div className="project-list reveal delay-one">
         {projectSlots.map((project) => (
-          <article className="project-case" key={project.number}>
+          <article className="project-case" key={project.title}>
             <aside>
-              <span>{project.number}</span>
               <p>{project.label}</p>
               <time>{project.period}</time>
             </aside>

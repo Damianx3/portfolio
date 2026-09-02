@@ -69,7 +69,6 @@ export const interests = [
 
 export const projectSlots = [
   {
-    number: "01",
     label: "Machine learning",
     title: "SBA Loan Default Risk Predictor",
     period: "April 2026",
@@ -82,7 +81,6 @@ export const projectSlots = [
     technologies: ["Python", "XGBoost", "SHAP", "Streamlit", "Pandas"],
   },
   {
-    number: "02",
     label: "Web development",
     title: "Personal Portfolio Website",
     period: "August 2026 - Present",

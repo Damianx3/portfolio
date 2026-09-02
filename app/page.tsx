@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       <section className="shell hero">
         <div className="hero-copy">
-          <p className="eyebrow"><span>01</span> Hello, I&apos;m</p>
+          <p className="eyebrow">Hello, I&apos;m</p>
           <h1>{profile.shortName}<span className="wave" aria-hidden="true">.</span></h1>
           <p className="hero-role">{profile.role}</p>
           <p className="hero-intro">I turn messy information and practical problems into reliable data systems and useful software.</p>
@@ -28,7 +28,7 @@ export default function Home() {
 
       <section className="shell section" id="experience">
         <div className="section-heading">
-          <div><p className="eyebrow"><span>02</span> Where I&apos;ve contributed</p><h2>Experience</h2></div>
+          <div><p className="eyebrow">Where I&apos;ve contributed</p><h2>Experience</h2></div>
           <p>Work grounded in clear reporting, useful software, and systems people can trust.</p>
         </div>
         <ExperienceTabs />
@@ -36,13 +36,13 @@ export default function Home() {
 
       <section className="shell section projects-section" id="projects">
         <div className="section-heading">
-          <div><p className="eyebrow"><span>03</span> Things I&apos;ve built</p><h2>Selected projects</h2></div>
+          <div><p className="eyebrow">Things I&apos;ve built</p><h2>Selected projects</h2></div>
           <p>A selection of work where data, software, and real-world problem solving come together.</p>
         </div>
         <div className="project-grid home-project-grid">
           {projectSlots.map((project) => (
-            <Link href="/projects" className="project-card" key={project.number}>
-              <div className="project-visual"><span>{project.number}</span><div className="project-window" aria-hidden="true"><i /><i /><i /><b /></div></div>
+            <Link href="/projects" className="project-card" key={project.title}>
+              <div className="project-visual"><div className="project-window" aria-hidden="true"><i /><i /><i /><b /></div></div>
               <p>{project.label}</p><h3>{project.title}</h3><span className="project-status">View project details →</span>
             </Link>
           ))}
@@ -50,7 +50,7 @@ export default function Home() {
       </section>
 
       <section className="shell contact-strip">
-        <p className="eyebrow"><span>04</span> Let&apos;s connect</p>
+        <p className="eyebrow">Let&apos;s connect</p>
         <div><h2>Have a problem worth<br />making simpler?</h2><a href={profile.github} target="_blank" rel="noreferrer">Find me on GitHub <ArrowUpRight /></a></div>
       </section>
     </main>
