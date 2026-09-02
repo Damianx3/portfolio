@@ -146,10 +146,14 @@ describe("POST /api/chat", () => {
     const requestOptions = fetchMock.mock.calls[0]?.[1] as RequestInit;
     const payload = JSON.parse(requestOptions.body as string) as {
       input: typeof messages;
+      model: string;
+      reasoning: { effort: string };
       store: boolean;
     };
 
     expect(payload.input).toEqual(messages);
+    expect(payload.model).toBe("gpt-5-nano");
+    expect(payload.reasoning).toEqual({ effort: "minimal" });
     expect(payload.store).toBe(false);
   });
 });

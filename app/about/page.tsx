@@ -50,7 +50,7 @@ export default function AboutPage() {
       <section className="interests-section">
         <h2>What I&apos;m<br />interested in</h2>
         <div className="interest-grid">
-          {interests.map((interest, index) => <article key={interest.title}><span>0{index + 1}</span><h3>{interest.title}</h3><p>{interest.body}</p></article>)}
+          {interests.map((interest) => <article key={interest.title}><h3>{interest.title}</h3><p>{interest.body}</p></article>)}
         </div>
       </section>
     </main>

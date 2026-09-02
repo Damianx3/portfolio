@@ -136,7 +136,13 @@ export function ChatWidget() {
         <section
           id="portfolio-chat"
           className="chat-panel"
+          role="dialog"
           aria-label="Portfolio assistant"
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setIsOpen(false);
+            }
+          }}
         >
           <header className="chat-header">
             <strong>Damian Support</strong>
@@ -176,6 +182,8 @@ export function ChatWidget() {
               value={input}
               onChange={(event) => setInput(event.target.value)}
               placeholder="Ask about Damian..."
+              maxLength={500}
+              autoFocus
               disabled={isSending}
             />
 

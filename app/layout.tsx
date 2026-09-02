@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/header";
-import "./globals.css";
 import { ChatWidget } from "@/components/chat-widget";
+import { getSiteUrl } from "@/lib/site-url";
+import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000");
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: siteUrl,
   title: { default: "Damian Ramirez — Software & Data", template: "%s — Damian Ramirez" },
   description: "The portfolio of Damian Ramirez, a Computer Science student focused on data engineering, backend systems, and practical software.",
   applicationName: "Damian Ramirez Portfolio",
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <Header />
         {children}
-        <ChatWidget/>
+        <ChatWidget />
         <footer className="site-footer">
           <div className="shell footer-inner">
             <p>Designed and built by Damian Ramirez.</p>
