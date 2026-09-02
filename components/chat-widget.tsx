@@ -8,6 +8,11 @@ type ChatMessage = {
   content: string;
 };
 
+type ChatResponse = {
+  reply?: string;
+  error?: string;
+};
+
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,39 +26,73 @@ export function ChatWidget() {
   ]);
 
   const [input, setInput] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const content = input.trim();
 
-    if (!content) {
+    if (!content || isSending) {
       return;
     }
 
-    const newMessage: ChatMessage = {
+    const userMessage: ChatMessage = {
       id: crypto.randomUUID(),
       role: "user",
       content,
     };
 
-    setMessages([...messages, newMessage]);
-    setInput("");
-
-    setTimeout(() => {
-  const assistantMessage: ChatMessage = {
-    id: crypto.randomUUID(),
-    role: "assistant",
-    content: `I received your question: "${content}"`,
-  };
-
     setMessages((currentMessages) => [
+      ...currentMessages,
+      userMessage,
+    ]);
+
+    setInput("");
+    setIsSending(true);
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: content,
+        }),
+      });
+
+      const data = (await response.json()) as ChatResponse;
+
+      if (!response.ok || !data.reply) {
+        throw new Error(data.error ?? "The chat request failed.");
+      }
+
+      const assistantMessage: ChatMessage = {
+        id: crypto.randomUUID(),
+        role: "assistant",
+        content: data.reply,
+      };
+
+      setMessages((currentMessages) => [
         ...currentMessages,
         assistantMessage,
-    ]);
-    }, 500);
-  }
+      ]);
+    } catch {
+      const errorMessage: ChatMessage = {
+        id: crypto.randomUUID(),
+        role: "assistant",
+        content: "Sorry, I couldn't answer that. Please try again.",
+      };
 
+      setMessages((currentMessages) => [
+        ...currentMessages,
+        errorMessage,
+      ]);
+    } finally {
+      setIsSending(false);
+    }
+  }
 
   return (
     <div className="chat-widget">
@@ -75,17 +114,19 @@ export function ChatWidget() {
         >
           <header className="chat-header">
             <strong>Damian Support</strong>
-            <span>Online</span>
+            <span>{isSending ? "Responding..." : "Online"}</span>
           </header>
 
-          <div className="chat-messages">
+          <div className="chat-messages" aria-live="polite">
             {messages.map((message) => (
               <div
                 className={`chat-message ${message.role}`}
                 key={message.id}
               >
                 <strong>
-                  {message.role === "assistant" ? "Damian Support" : "You"}
+                  {message.role === "assistant"
+                    ? "Damian Support"
+                    : "You"}
                 </strong>
 
                 <p>{message.content}</p>
@@ -102,9 +143,12 @@ export function ChatWidget() {
               value={input}
               onChange={(event) => setInput(event.target.value)}
               placeholder="Ask about Damian..."
+              disabled={isSending}
             />
 
-            <button type="submit">Send</button>
+            <button type="submit" disabled={isSending}>
+              {isSending ? "Sending..." : "Send"}
+            </button>
           </form>
         </section>
       )}
