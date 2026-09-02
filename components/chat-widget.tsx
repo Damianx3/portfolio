@@ -106,7 +106,15 @@ export function ChatWidget() {
         aria-controls="portfolio-chat"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? "Close chat" : "Chat with Damian"}
+        <span className="chat-toggle-copy">
+          <span>Chat with</span>
+          <strong>
+            <i className="chat-status-dot" aria-hidden="true" />
+            Damian Support
+          </strong>
+        </span>
+
+        <span className="chat-toggle-chevron" aria-hidden="true" />
       </button>
 
       {isOpen && (
