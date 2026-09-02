@@ -6,6 +6,10 @@ import {
   profile,
   projectSlots,
 } from "@/data/portfolio";
+import {
+  checkChatRateLimit,
+  getClientIdentifier,
+} from "@/lib/chat-rate-limit";
 
 type ChatRequest = {
   message?: string;
@@ -64,6 +68,25 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { error: "Messages must be 500 characters or fewer." },
       { status: 400 },
+    );
+  }
+
+  const rateLimit = checkChatRateLimit(getClientIdentifier(request));
+
+  if (!rateLimit.allowed) {
+    const retryAfter = Math.max(
+      1,
+      Math.ceil((rateLimit.resetAt - Date.now()) / 1000),
+    );
+
+    return NextResponse.json(
+      { error: "Too many messages. Please try again in a few minutes." },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": retryAfter.toString(),
+        },
+      },
     );
   }
 

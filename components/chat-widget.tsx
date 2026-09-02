@@ -78,11 +78,14 @@ export function ChatWidget() {
         ...currentMessages,
         assistantMessage,
       ]);
-    } catch {
+    } catch (error) {
       const errorMessage: ChatMessage = {
         id: crypto.randomUUID(),
         role: "assistant",
-        content: "Sorry, I couldn't answer that. Please try again.",
+        content:
+          error instanceof Error
+            ? error.message
+            : "Sorry, I couldn't answer that. Please try again.",
       };
 
       setMessages((currentMessages) => [
