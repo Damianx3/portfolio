@@ -13,8 +13,8 @@ type Photo = {
 
 const initialPhotos: Photo[] = [
   { id: 3, src: "/images/damian-portrait.webp", alt: "Portrait of Damian Ramirez wearing a dark blazer", position: "portrait" },
-  { id: 2, src: "/images/damian-speaking.webp", alt: "Damian Ramirez presenting at a podium", position: "speaking" },
   { id: 1, src: "/images/damian-outdoors.webp", alt: "Damian Ramirez standing outdoors on the UTRGV campus", position: "outdoors" },
+  { id: 2, src: "/images/damian-speaking.webp", alt: "Damian Ramirez presenting at a podium", position: "speaking" },
 ];
 
 export function HomePortraitCarousel() {
@@ -70,7 +70,7 @@ function SwipePhoto({ photo, photos, setPhotos, depth }: {
       whileDrag={{ cursor: "grabbing" }}
       aria-hidden={!isFront}
     >
-      <Image src={photo.src} alt={isFront ? photo.alt : ""} fill priority={photo.id === 1} sizes="(max-width: 620px) 250px, 290px" draggable={false} />
+      <Image src={photo.src} alt={isFront ? photo.alt : ""} fill priority={photo.id === 2} sizes="(max-width: 620px) 250px, 290px" draggable={false} />
     </motion.figure>
   );
 }
