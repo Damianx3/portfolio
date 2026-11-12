@@ -257,7 +257,8 @@ body:has(.portfolio-v2)::after {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  min-height: 36px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 7px 11px;
 
   color: var(--text);
@@ -1291,8 +1292,8 @@ html[data-theme="light"]
   }
 
   .theme-toggle {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
     padding: 0;
   }
 

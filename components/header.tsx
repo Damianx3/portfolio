@@ -7,8 +7,7 @@ import { useEffect, useState } from "react";
 
 import { ArrowUpRight } from "@/components/icons";
 import { profile } from "@/data/portfolio";
-
-type Theme = "dark" | "light";
+import { readStoredTheme, storeTheme, type Theme } from "@/lib/theme";
 
 const links = [
   { href: "/", label: "Home" },
@@ -28,35 +27,16 @@ export function Header() {
         : "home";
 
   useEffect(() => {
-    // Read the previously selected theme.
-    const saved = localStorage.getItem("portfolio-theme");
-
-    const initial: Theme =
-      saved === "light" ? "light" : "dark";
-
-    // Apply it to the entire document.
-    document.documentElement.setAttribute(
-      "data-theme",
-      initial
-    );
-
-    // Synchronize the button after the first render.
-    requestAnimationFrame(() => {
-      setTheme(initial);
-    });
+    const initial = readStoredTheme();
+    document.documentElement.dataset.theme = initial;
+    setTheme(initial);
   }, []);
 
   function toggleTheme() {
-    const next: Theme =
-      theme === "dark" ? "light" : "dark";
-
-    document.documentElement.setAttribute(
-      "data-theme",
-      next
-    );
-
-    localStorage.setItem("portfolio-theme", next);
+    const next: Theme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    document.documentElement.dataset.theme = next;
     setTheme(next);
+    storeTheme(next);
   }
 
   return (
