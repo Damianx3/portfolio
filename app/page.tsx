@@ -202,9 +202,7 @@ export default function Home() {
         className="shell section home-contact"
         id="contact"
       >
-        <p className="eyebrow">Get in touch</p>
-
-        <h2>Thanks for stopping by.</h2>
+        <h2>Get in touch.</h2>
 
         <p>
           I&apos;m always open to connecting
