@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import Image from "next/image";
 
 import {
   ArrowUpRight,
@@ -21,7 +22,6 @@ const linkedinUrl = "https://www.linkedin.com/in/damianram/";
 export default function Home() {
   return (
     <main className="portfolio-v2">
-      {/* Interactive dots outside the centered column */}
       <LivingDots />
 
       {/* HERO */}
@@ -30,14 +30,11 @@ export default function Home() {
 
         <div className="shell hero-inner">
           <div className="hero-copy">
-            <p className="eyebrow">
-              Hello, I&apos;m
-            </p>
+            <p className="eyebrow">Hello, I&apos;m</p>
 
             <h1>
               {profile.shortName}
               <span className="wave" aria-hidden="true">
-                .
               </span>
             </h1>
 
@@ -52,7 +49,6 @@ export default function Home() {
               problems into useful solutions.
             </p>
 
-            {/* Main resume button */}
             <div className="hero-actions">
               <a
                 href={profile.resume}
@@ -65,14 +61,13 @@ export default function Home() {
               </a>
             </div>
 
-            {/* Social links */}
             <div className="hero-socials">
               <a
                 href={linkedinUrl}
                 className="icon-link"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Damian's LinkedIn profile"
+                aria-label="LinkedIn"
                 title="LinkedIn"
               >
                 <LinkedinIcon size={21} />
@@ -83,7 +78,7 @@ export default function Home() {
                 className="icon-link"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Damian's GitHub profile"
+                aria-label="GitHub"
                 title="GitHub"
               >
                 <GithubIcon size={21} />
@@ -92,7 +87,7 @@ export default function Home() {
               <a
                 href={`mailto:${profile.email}`}
                 className="icon-link"
-                aria-label="Email Damian"
+                aria-label="Email"
                 title="Email"
               >
                 <MailIcon size={21} />
@@ -100,7 +95,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Portrait carousel */}
           <div className="hero-portrait-column">
             <HomePortraitCarousel />
 
@@ -113,64 +107,76 @@ export default function Home() {
 
         <div className="shell hero-bottom">
           <span>Rio Grande Valley, Texas</span>
-
-          <a href="#projects">
-            Scroll to explore ↓
-          </a>
+          <a href="#projects">Scroll to explore ↓</a>
         </div>
       </section>
 
-      {/* PROJECTS */}
+      {/* SELECTED WORK */}
       <section
         className="shell section projects-section"
         id="projects"
       >
-        <div className="section-heading">
-          <p className="eyebrow">
-            Things I&apos;ve built
-          </p>
+        <div className="portfolio-section-intro">
+          <span className="portfolio-section-kicker">
+            SELECTED WORK
+          </span>
 
-          <h2>Selected projects.</h2>
+          <h2>Projects.</h2>
 
           <p>
-            Software, data, and practical problems
-            I&apos;ve enjoyed working on.
+            A few things I&apos;ve built across software,
+            data, and machine learning.
           </p>
         </div>
 
-        <div className="project-grid home-project-grid">
+        <div className="featured-project-list">
           {projectSlots.map((project) => (
             <Link
-              href="/projects"
-              className="project-card"
-              key={project.title}
+              key={project.slug}
+              href={`/projects#${project.slug}`}
+              className="featured-project"
+              aria-label={`Explore ${project.title}`}
             >
-              <div className="project-visual">
-                <div
-                  className="project-window"
-                  aria-hidden="true"
-                >
-                  <i />
-                  <i />
-                  <i />
-                  <b />
-                </div>
+              <div className="featured-project-image">
+                <Image
+                  src={project.image}
+                  alt={project.imageAlt}
+                  fill
+                  sizes="(max-width: 650px) 100vw, 205px"
+                  className="project-image"
+                />
               </div>
 
-              <div className="project-card-copy">
-                <p className="project-category">
+              <div className="featured-project-info">
+                <span className="featured-project-label">
                   {project.label}
-                </p>
+                </span>
 
                 <h3>{project.title}</h3>
 
-                <span className="project-status">
-                  View project details ↗
+                <p>{project.shortDescription}</p>
+
+                <span className="featured-project-link">
+                  Explore project
+                  <ArrowUpRight size={15} />
                 </span>
               </div>
+
+              <ArrowUpRight
+                size={18}
+                className="featured-project-arrow"
+              />
             </Link>
           ))}
         </div>
+
+        <Link
+          href="/projects"
+          className="all-projects-link"
+        >
+          View all project details
+          <ArrowUpRight size={16} />
+        </Link>
       </section>
 
       {/* EXPERIENCE */}
@@ -178,16 +184,16 @@ export default function Home() {
         className="shell section"
         id="experience"
       >
-        <div className="section-heading">
-          <p className="eyebrow">
-            Where I&apos;ve contributed
-          </p>
+        <div className="portfolio-section-intro">
+          <span className="portfolio-section-kicker">
+            WHERE I&apos;VE CONTRIBUTED
+          </span>
 
           <h2>Experience.</h2>
 
           <p>
-            Building useful software and learning
-            from real teams and challenges.
+            Building software and learning from
+            real teams and challenges.
           </p>
         </div>
 
@@ -199,9 +205,7 @@ export default function Home() {
         className="shell section home-contact"
         id="contact"
       >
-        <p className="eyebrow">
-          Get in touch
-        </p>
+        <p className="eyebrow">Get in touch</p>
 
         <h2>Thanks for stopping by.</h2>
 
