@@ -1,0 +1,425 @@
+
+/* ==========================================
+   PORTFOLIO V2 — HERO REFINEMENT
+
+   Only changes hero typography, spacing,
+   portrait presentation and hand artwork.
+   Does not modify the living dots.
+   ========================================== */
+
+/* 1. HERO LAYOUT */
+
+.portfolio-v2 .hero-v2 {
+  min-height: 580px;
+  background: var(--hero-bg);
+}
+
+.portfolio-v2 .hero-v2 .hero-inner {
+  position: relative;
+  z-index: 2;
+
+  width: min(800px, calc(100% - 48px));
+  min-height: 580px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 248px;
+  align-items: center;
+
+  gap: 44px;
+
+  padding-top: 76px;
+  padding-bottom: 100px;
+}
+
+/* 2. INTRODUCTION */
+
+.portfolio-v2 .hero-v2 .hero-copy {
+  width: 100%;
+  max-width: 480px;
+  min-width: 0;
+}
+
+.portfolio-v2 .hero-v2 .eyebrow {
+  margin: 0 0 14px;
+
+  font-family: var(--mono);
+  color: var(--green);
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.portfolio-v2 .hero-v2 h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(64px, 6.5vw, 88px);
+
+  font-weight: 700;
+  line-height: 1.03;
+
+  letter-spacing: -0.065em;
+  color: var(--text);
+}
+
+.portfolio-v2 .hero-v2 h1 .wave {
+  color: var(--green);
+}
+
+.portfolio-v2 .hero-v2 .hero-role {
+  margin: 25px 0 0;
+
+  max-width: 445px;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.4;
+
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.portfolio-v2 .hero-v2 .hero-intro {
+  max-width: 440px;
+  margin: 17px 0 0;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  letter-spacing: -0.005em;
+  color: var(--muted);
+}
+
+/* 3. ACTIONS */
+
+.portfolio-v2 .hero-v2 .hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.portfolio-v2 .hero-v2 .button {
+  min-height: 44px;
+  padding: 0 17px;
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0;
+
+  border-radius: 5px;
+}
+
+.portfolio-v2 .hero-v2 .button-primary {
+  color: var(--bg);
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.portfolio-v2 .hero-v2 .button-secondary {
+  background: var(--panel);
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.portfolio-v2 .hero-v2 .hero-socials {
+  display: flex;
+  gap: 9px;
+  margin-top: 17px;
+}
+
+.portfolio-v2 .hero-v2 .icon-link {
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--line);
+  border-radius: 5px;
+
+  background: var(--panel);
+  color: var(--muted);
+}
+
+/* 4. PORTRAIT */
+
+.portfolio-v2 .hero-portrait-column {
+  position: relative;
+  z-index: 3;
+
+  width: 248px;
+  max-width: 100%;
+
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-v2 .hero-v2 .portrait-stack {
+  width: 240px;
+  height: 315px;
+
+  margin-inline: auto;
+  justify-self: center;
+
+  filter: none !important;
+}
+
+/* Natural photo colors in both themes */
+.portfolio-v2 .hero-v2 .swipe-card,
+.portfolio-v2 .hero-v2 .swipe-card img,
+.portfolio-v2 .hero-v2 .profile-photo {
+  filter: none !important;
+}
+
+.portfolio-v2 .hero-v2 .profile-photo {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+
+  background: var(--panel);
+}
+
+.portfolio-v2 .hero-v2 .swipe-card {
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+/*
+  Crop the blazer portrait closer to the face.
+
+  Scaling the image inside its existing
+  frame removes some excess background
+  without changing the swipe functionality.
+*/
+
+.portfolio-v2 .hero-v2 .swipe-card.portrait img {
+  object-fit: cover;
+  object-position: center 65%;
+
+  transform: scale(1.16);
+  transform-origin: center 72%;
+}
+
+.portfolio-v2 .hero-v2 .swipe-card.outdoors img,
+.portfolio-v2 .hero-v2 .swipe-card.speaking img {
+  object-fit: cover;
+}
+
+.portfolio-v2 .hero-photo-hint {
+  width: 100%;
+  margin: 13px 0 0;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+
+  color: var(--faint);
+
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+
+.portfolio-v2 .hero-photo-hint span {
+  color: var(--green);
+}
+
+/* 5. CREATION OF ADAM ARTWORK */
+
+.portfolio-v2 .hero-v2 .hero-hands {
+  position: absolute;
+
+  inset: 2% -4% 4% 23%;
+  z-index: 0;
+
+  background-image:
+    url("/images/creation-hands-halftone.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  opacity: 0.2;
+
+  pointer-events: none;
+
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.25) 27%,
+    black 60%,
+    black 100%
+  );
+
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.25) 27%,
+    black 60%,
+    black 100%
+  );
+}
+
+html[data-theme="light"]
+.portfolio-v2 .hero-v2 .hero-hands {
+  opacity: 0.14;
+}
+
+/* 6. BOTTOM CAPTION */
+
+.portfolio-v2 .hero-v2 .hero-bottom {
+  position: absolute;
+  z-index: 3;
+
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(800px, calc(100% - 48px));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  color: var(--faint);
+
+  font-family: var(--mono);
+  font-size: 10px;
+}
+
+/* 7. TABLET */
+
+@media (max-width: 820px) {
+  .portfolio-v2 .hero-v2 .hero-inner {
+    width: calc(100% - 40px);
+
+    grid-template-columns:
+      minmax(0, 1fr) 210px;
+
+    gap: 24px;
+    min-height: 535px;
+
+    padding-top: 64px;
+    padding-bottom: 90px;
+  }
+
+  .portfolio-v2 .hero-v2 h1 {
+    font-size: clamp(60px, 9vw, 78px);
+  }
+
+  .portfolio-v2 .hero-portrait-column {
+    width: 210px;
+  }
+
+  .portfolio-v2 .hero-v2 .portrait-stack {
+    width: 205px;
+    height: 280px;
+  }
+
+  .portfolio-v2 .hero-v2 .hero-bottom {
+    width: calc(100% - 40px);
+  }
+}
+
+/* 8. MOBILE */
+
+@media (max-width: 650px) {
+  .portfolio-v2 .hero-v2 {
+    min-height: auto;
+  }
+
+  .portfolio-v2 .hero-v2 .hero-inner {
+    width: calc(100% - 32px);
+
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    min-height: auto;
+    padding-top: 54px;
+    padding-bottom: 100px;
+  }
+
+  .portfolio-v2 .hero-v2 .hero-copy {
+    max-width: 100%;
+  }
+
+  .portfolio-v2 .hero-v2 h1 {
+    font-size: clamp(56px, 13vw, 76px);
+  }
+
+  .portfolio-v2 .hero-v2 .hero-role {
+    font-size: 17px;
+  }
+
+  .portfolio-v2 .hero-v2 .hero-intro {
+    font-size: 14px;
+  }
+
+  .portfolio-v2 .hero-portrait-column {
+    width: 225px;
+  }
+
+  .portfolio-v2 .hero-v2 .portrait-stack {
+    width: 220px;
+    height: 290px;
+  }
+
+  .portfolio-v2 .hero-v2 .hero-hands {
+    inset: 0 -45% 30% -20%;
+    opacity: 0.15;
+  }
+
+  .portfolio-v2 .hero-v2 .hero-bottom {
+    width: calc(100% - 32px);
+    font-size: 9px;
+  }
+}
+
+/* 9. SMALL SCREENS */
+
+@media (max-width: 380px) {
+  .portfolio-v2 .hero-v2 .hero-inner {
+    width: calc(100% - 26px);
+  }
+
+  .portfolio-v2 .hero-v2 .hero-bottom {
+    width: calc(100% - 26px);
+  }
+
+  .portfolio-v2 .hero-photo-hint {
+    font-size: 8px;
+  }
+}
+
+/* 10. REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-v2 .hero-v2 * {
+    transition: none !important;
+  }
+}
