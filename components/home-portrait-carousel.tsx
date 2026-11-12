@@ -61,8 +61,22 @@ export function HomePortraitCarousel() {
       className="portrait-stack swipe-stack"
       role="region"
       aria-roledescription="carousel"
-      aria-label="Swipeable photos of Damian"
+      aria-label="Photos of Damian"
+      aria-describedby="portrait-keyboard-help"
+      tabIndex={0}
+      onKeyDown={(event) => {
+        if (event.target !== event.currentTarget ||
+            (event.key !== "ArrowLeft" && event.key !== "ArrowRight")) return;
+        event.preventDefault();
+        setPhotos((current) => current.length > 1 ? current.slice(0, -1) : initialPhotos);
+      }}
     >
+      <span id="portrait-keyboard-help" className="sr-only">
+        Swipe or use the left and right arrow keys to change photos.
+      </span>
+      <span className="sr-only" aria-live="polite" aria-atomic="true">
+        {photos.at(-1)?.alt ?? "End of photos. Select View again to restart."}
+      </span>
       {photos.length === 0 && (
         <button
           className="swipe-reset"

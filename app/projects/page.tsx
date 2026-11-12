@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <main className="shell projects-page-v2">
+    <main id="main-content" tabIndex={-1} className="shell projects-page-v2">
       {/* SCHOOL OF ATHENS HEADER */}
       <header className="page-art-hero page-art-hero--projects">
         <div className="artwork-extension" aria-hidden="true" />

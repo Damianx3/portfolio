@@ -21,7 +21,7 @@ const linkedinUrl = "https://www.linkedin.com/in/damianram/";
 
 export default function Home() {
   return (
-    <main className="portfolio-v2">
+    <main id="main-content" tabIndex={-1} className="portfolio-v2">
       <LivingDots />
 
       {/* HERO */}

@@ -77,6 +77,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
+              aria-current={pathname === link.href ? "page" : undefined}
               className={
                 pathname === link.href ? "active" : undefined
               }

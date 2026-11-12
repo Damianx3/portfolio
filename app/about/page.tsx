@@ -42,7 +42,7 @@ const hazelPhotos = [
 
 export default function AboutPage() {
   return (
-    <main className="shell about-page about-page-refined">
+    <main id="main-content" tabIndex={-1} className="shell about-page about-page-refined">
       {/* ABOUT HEADER — WANDERER HALFTONE */}
       <header className="about-art-header">
         <div className="artwork-extension" aria-hidden="true" />
