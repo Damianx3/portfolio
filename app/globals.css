@@ -1578,8 +1578,7 @@ button {
     font-size: 11px;
   }
 
-  .site-nav > a:first-child,
-  .site-nav > a:last-child {
+  .site-nav .nav-github {
     display: none;
   }
 
