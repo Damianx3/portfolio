@@ -17,6 +17,20 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn more about Damian Ramirez, his background, interests, and life outside of programming.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Damian Ramirez Portfolio",
+    title: "About — Damian Ramirez",
+    description: "Learn more about Damian Ramirez, his background, interests, and life outside of programming.",
+    url: "/about",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About — Damian Ramirez",
+    description: "Learn more about Damian Ramirez, his background, interests, and life outside of programming.",
+  },
 };
 
 const linkedinUrl = "https://www.linkedin.com/in/damianram/";

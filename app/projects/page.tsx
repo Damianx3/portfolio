@@ -15,6 +15,20 @@ export const metadata: Metadata = {
   title: "Projects",
   description:
     "Software engineering, data engineering, embedded AI, and machine learning projects by Damian Ramirez.",
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: "Damian Ramirez Portfolio",
+    title: "Projects — Damian Ramirez",
+    description: "Software engineering, data engineering, embedded AI, and machine learning projects by Damian Ramirez.",
+    url: "/projects",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects — Damian Ramirez",
+    description: "Software engineering, data engineering, embedded AI, and machine learning projects by Damian Ramirez.",
+  },
 };
 
 export default function ProjectsPage() {

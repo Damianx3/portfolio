@@ -17,6 +17,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
+  alternates: { canonical: "/" },
   title: {
     default: "Damian Ramirez — Software & Data",
     template: "%s — Damian Ramirez",
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
+    url: "/",
     locale: "en_US",
     siteName: "Damian Ramirez Portfolio",
     title: "Damian Ramirez — Software & Data",

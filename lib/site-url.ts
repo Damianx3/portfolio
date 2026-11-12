@@ -1,9 +1,6 @@
 export function getSiteUrl() {
-  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 
-  return new URL(
-    configuredUrl ??
-      (vercelUrl ? `https://${vercelUrl}` : "http://localhost:3000"),
-  );
+  // Keep public metadata on the production domain, including preview builds.
+  return new URL(configuredUrl || "https://damian-portfolio.com");
 }
