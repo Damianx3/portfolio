@@ -2,7 +2,6 @@
 import type { Metadata, Viewport } from "next";
 
 import { Header } from "@/components/header";
-import { ChatWidget } from "@/components/chat-widget";
 import { getSiteUrl } from "@/lib/site-url";
 
 import "./globals.css";
@@ -56,8 +55,6 @@ export default function RootLayout({
         <Header />
 
         {children}
-
-        <ChatWidget />
 
         <footer className="site-footer">
           <div className="shell footer-inner">

@@ -1070,9 +1070,7 @@ html[data-theme="light"]
   border-color: var(--line);
 }
 
-.tab-list,
-.chat-header,
-.chat-form {
+.tab-list {
   background: var(--panel-soft);
 }
 
@@ -1093,42 +1091,6 @@ html[data-theme="light"]
 .technology-list span {
   color: var(--lavender);
   background: var(--panel);
-}
-
-.chat-toggle,
-.chat-panel {
-  color: var(--text);
-  background: var(--panel);
-  border-color: var(--line);
-}
-
-.chat-message {
-  background: var(--panel-soft);
-  border-color: var(--line);
-}
-
-.chat-message strong {
-  color: var(--green);
-}
-
-.chat-message.user {
-  background: color-mix(
-    in srgb,
-    var(--green) 12%,
-    var(--panel)
-  );
-}
-
-.chat-form input {
-  color: var(--text);
-  background: var(--bg-deep);
-  border-color: var(--line);
-}
-
-.chat-form button {
-  color: var(--bg);
-  background: var(--green);
-  border-color: var(--green);
 }
 
 /* ---------- RESPONSIVE ---------- */
