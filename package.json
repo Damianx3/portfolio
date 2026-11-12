@@ -8,11 +8,11 @@
     "start": "next start",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "framer-motion": "12.23.12",
-    "next": "16.3.3",
+    "next": "^16.4.6",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
