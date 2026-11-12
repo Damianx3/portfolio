@@ -1343,3 +1343,506 @@ html[data-theme="light"]
     transition: none !important;
   }
 }
+/* =================================================
+   ABOUT + PROJECTS PAGE HEADINGS
+   ================================================= */
+
+.page-art-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+
+.page-art-title {
+  margin: 0;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 6vw, 58px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.page-art-copy {
+  max-width: 600px;
+  margin: 15px 0 0;
+  color: var(--muted);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ================================================
+   ABOUT PAGE — PERSONAL EDITORIAL REFINEMENT
+   ================================================ */
+
+.about-page-refined {
+  width: min(800px, calc(100% - 48px));
+  max-width: 800px;
+  margin-inline: auto;
+  padding-top: 0;
+  padding-bottom: 100px;
+}
+
+.about-page-refined .about-art-header .eyebrow {
+  margin-bottom: 13px;
+  color: var(--green);
+  font-size: 10px;
+}
+
+.about-page-refined .page-title {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(45px, 6vw, 65px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.about-page-refined .about-header-subtitle {
+  max-width: 480px;
+  margin: 14px 0 0;
+
+  color: var(--muted);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* Original photo and text layout */
+
+.about-page-refined .about-intro {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  align-items: start;
+  gap: 38px;
+}
+
+.about-page-refined .about-photo {
+  width: 100%;
+  min-height: 390px;
+  border-radius: 7px;
+}
+
+.about-page-refined .about-photo img {
+  object-fit: cover;
+  filter: none;
+}
+
+.about-page-refined .about-copy {
+  min-width: 0;
+  padding-top: 0;
+
+  color: var(--muted);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.about-page-refined .about-copy p {
+  margin: 0 0 16px;
+}
+
+.about-page-refined .about-copy strong {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.about-page-refined .about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+
+  margin-top: 23px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.about-page-refined .about-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 650;
+
+  transition: opacity 180ms ease;
+}
+
+.about-page-refined .about-links a:hover {
+  opacity: 0.75;
+}
+
+/* Hazel's original photo gallery */
+
+.about-page-refined .personal-section {
+  margin-top: 62px;
+  padding-top: 35px;
+  border-top: 1px solid var(--line);
+}
+
+.about-page-refined .personal-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 0;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.about-page-refined .personal-section h2 svg {
+  color: var(--green);
+}
+
+.about-page-refined .personal-section h2 span {
+  color: var(--green);
+}
+
+.about-page-refined .section-note {
+  margin: 7px 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.about-page-refined .photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.about-page-refined .hazel-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--panel);
+}
+
+.about-page-refined .hazel-photo img {
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.about-page-refined .hazel-photo:hover img {
+  transform: scale(1.045);
+}
+
+/* Technical interests */
+
+.about-page-refined .interests-section {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 30px;
+
+  margin-top: 62px;
+  padding-top: 35px;
+  border-top: 1px solid var(--line);
+}
+
+.about-page-refined .interests-section > h2 {
+  margin: 0;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+}
+
+.about-page-refined .interests-section > h2 span {
+  color: var(--green);
+}
+
+.about-page-refined .interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.about-page-refined .interest-grid h3 {
+  margin: 0 0 8px;
+  color: var(--green);
+  font-size: 12px;
+}
+
+.about-page-refined .interest-grid p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+/* Responsive */
+
+@media (max-width: 760px) {
+  .about-page-refined .about-intro {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .about-page-refined .about-photo {
+    min-height: 335px;
+  }
+
+  .about-page-refined .interests-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  .about-page-refined {
+    width: calc(100% - 32px);
+    padding-bottom: 65px;
+  }
+
+  .about-page-refined .about-intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .about-page-refined .about-photo {
+    width: 100%;
+    max-width: 350px;
+    min-height: 340px;
+  }
+
+  .about-page-refined .photo-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-page-refined .interest-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .about-page-refined .personal-section,
+  .about-page-refined .interests-section {
+    margin-top: 45px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page-refined .hazel-photo img,
+  .about-page-refined .about-links a {
+    transition: none;
+  }
+}
+
+/* =================================================
+   HALFTONE ARTWORK HEADERS — SINGLE SOURCE OF TRUTH
+   About: Wanderer above the Sea of Fog
+   Projects: The School of Athens
+   ================================================= */
+
+/* Full-viewport artwork headers */
+
+.about-page-refined,
+.projects-page-v2 {
+  padding-top: 0;
+}
+
+.about-page-refined .about-art-header,
+.projects-page-v2 .page-art-hero--projects {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 100vw;
+  max-width: none;
+
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-top: 0;
+  margin-bottom: 40px;
+
+  --art-height: clamp(320px, 30vw, 420px);
+  min-height: var(--art-height);
+  padding: 44px 0;
+
+  display: flex;
+  align-items: center;
+
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Text remains aligned to the 800px content column */
+
+.about-page-refined .about-art-header-content,
+.projects-page-v2 .page-art-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(800px, calc(100% - 48px));
+  max-width: 800px;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+
+
+/* Keep the complete painting centered; a faint enlarged copy fills the gutters.
+   Both layers use the same theme treatment so white image paper disappears. */
+.about-page-refined .about-art-header {
+  --header-art: url("/images/about-wanderer-halftone.png");
+  --art-ratio: 1.5;
+}
+
+.projects-page-v2 .page-art-hero--projects {
+  --header-art: url("/images/Athens-Halftone.png");
+  --art-ratio: 2;
+}
+
+.about-page-refined .about-art-header::before,
+.projects-page-v2 .page-art-hero--projects::before,
+.about-page-refined .artwork-extension,
+.projects-page-v2 .artwork-extension {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--header-art);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.38;
+  filter: grayscale(1) contrast(1.1);
+  mix-blend-mode: multiply;
+}
+
+.about-page-refined .about-art-header::before,
+.projects-page-v2 .page-art-hero--projects::before {
+  content: "";
+  z-index: 0;
+  background-size: contain;
+  width: min(100%, calc(var(--art-height) * var(--art-ratio)));
+  inset: auto;
+  height: auto;
+  aspect-ratio: var(--art-ratio);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* Fade the image perimeter rather than exposing its rectangular bounds. */
+  mask-image: radial-gradient(ellipse 50% 50% at center, #000 40%, transparent 100%);
+}
+
+.about-page-refined .artwork-extension,
+.projects-page-v2 .artwork-extension {
+  z-index: -1;
+  background-size: cover;
+  opacity: 0.1;
+  filter: grayscale(1) blur(12px);
+}
+
+html[data-theme="dark"] .about-page-refined .about-art-header::before,
+html[data-theme="dark"] .projects-page-v2 .page-art-hero--projects::before {
+  filter: invert(1) grayscale(1) sepia(1) saturate(1.4) hue-rotate(85deg);
+  mix-blend-mode: screen;
+}
+
+html[data-theme="dark"] .about-page-refined .artwork-extension,
+html[data-theme="dark"] .projects-page-v2 .artwork-extension {
+  filter: invert(1) grayscale(1) sepia(1) saturate(1.4) hue-rotate(85deg) blur(12px);
+  mix-blend-mode: screen;
+}
+
+/* Protect the text without hiding the painting's left half. */
+.about-page-refined .about-art-header::after,
+.projects-page-v2 .page-art-hero--projects::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--bg) 88%, transparent) 0%,
+    color-mix(in srgb, var(--bg) 55%, transparent) 40%,
+    color-mix(in srgb, var(--bg) 15%, transparent) 75%,
+    transparent 100%
+  );
+}
+
+/* Preserve typography */
+
+.about-page-refined .about-art-header .page-title,
+.projects-page-v2 .page-art-title {
+  margin: 0;
+  color: var(--text);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 6vw, 58px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.about-page-refined .about-art-header .page-title span {
+  color: var(--green);
+}
+
+.about-page-refined .about-header-subtitle,
+.projects-page-v2 .page-art-copy {
+  max-width: 500px;
+  margin: 14px 0 0;
+
+  color: var(--muted);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* Project navigation */
+
+.projects-page-v2 .page-art-content .project-jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.projects-page-v2 .page-art-content .project-jump-links a {
+  padding: 7px 11px;
+
+  color: var(--text);
+  background: var(--panel);
+
+  border: 1px solid var(--line);
+  border-radius: 5px;
+
+  font-size: 11px;
+}
+
+.projects-page-v2 .page-art-content .project-jump-links a:hover {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .about-page-refined .about-art-header,
+  .projects-page-v2 .page-art-hero--projects {
+    --art-height: 285px;
+    min-height: var(--art-height);
+    padding: 40px 0;
+    margin-bottom: 30px;
+  }
+
+  .about-page-refined .about-art-header-content,
+  .projects-page-v2 .page-art-content {
+    width: calc(100% - 32px);
+  }
+
+  .about-page-refined .about-art-header .page-title,
+  .projects-page-v2 .page-art-title {
+    font-size: clamp(36px, 10vw, 46px);
+  }
+}
