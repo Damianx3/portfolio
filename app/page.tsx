@@ -15,9 +15,6 @@ import { LivingDots } from "@/components/living-dots";
 
 import { profile, projectSlots } from "@/data/portfolio";
 
-import "./living-dots.css";
-
-const linkedinUrl = "https://www.linkedin.com/in/damianram/";
 
 export default function Home() {
   return (
@@ -63,7 +60,7 @@ export default function Home() {
 
             <div className="hero-socials">
               <a
-                href={linkedinUrl}
+                href={profile.linkedin}
                 className="icon-link"
                 target="_blank"
                 rel="noopener noreferrer"

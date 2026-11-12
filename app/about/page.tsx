@@ -1,4 +1,3 @@
-import "../living-dots.css";
 
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -32,8 +31,6 @@ export const metadata: Metadata = {
     description: "Learn more about Damian Ramirez, his background, interests, and life outside of programming.",
   },
 };
-
-const linkedinUrl = "https://www.linkedin.com/in/damianram/";
 
 const hazelPhotos = [
   {
@@ -142,7 +139,7 @@ export default function AboutPage() {
             </a>
 
             <a
-              href={linkedinUrl}
+              href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
             >

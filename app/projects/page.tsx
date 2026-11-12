@@ -1,4 +1,3 @@
-import "../living-dots.css";
 
 import type { Metadata } from "next";
 import Image from "next/image";

@@ -6,6 +6,7 @@ export const profile = {
   focus: "Data engineering, backend systems, and practical software.",
   location: "Texas",
   github: "https://github.com/Damianx3",
+  linkedin: "https://www.linkedin.com/in/damianram/",
   email: "damian.ramirez.cs@gmail.com",
   resume: "/Damian_Ramirez_Resume.pdf",
 };
@@ -16,6 +17,7 @@ export type Experience = {
   period: string;
   description: string;
   bullets?: string[];
+  technologies?: string[];
   logo: string;
   logoAlt: string;
 };
@@ -27,6 +29,7 @@ export const experience: Record<
   work: [
     {
       organization: "Texas Manufacturing Assistance Center",
+      technologies: ["Next.js", "FastAPI", "PostgreSQL"],
       role: "Software Engineering Intern",
       period: "Sep 2025 - Present",
       description:
@@ -42,6 +45,7 @@ export const experience: Record<
     },
     {
       organization: "Brownsville Public Utilities Board",
+      technologies: ["Power BI", "DAX", "Power Query"],
       role: "Operations Analyst Intern",
       period: "May 2026 - Aug 2026",
       description:

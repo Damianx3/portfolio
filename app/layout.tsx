@@ -6,6 +6,7 @@ import { getSiteUrl } from "@/lib/site-url";
 
 import "./globals.css";
 import "./hero-v2.css";
+import "./living-dots.css";
 
 const siteUrl = getSiteUrl();
 
