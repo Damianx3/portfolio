@@ -1655,12 +1655,12 @@ html[data-theme="light"]
 /* Keep the complete painting centered; a faint enlarged copy fills the gutters.
    Both layers use the same theme treatment so white image paper disappears. */
 .about-page-refined .about-art-header {
-  --header-art: url("/images/about-wanderer-halftone.png");
+  --header-art: url("/images/about-wanderer-halftone.webp");
   --art-ratio: 1.5;
 }
 
 .projects-page-v2 .page-art-hero--projects {
-  --header-art: url("/images/Athens-Halftone.png");
+  --header-art: url("/images/Athens-Halftone.webp");
   --art-ratio: 2;
 }
 
