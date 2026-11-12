@@ -104,8 +104,29 @@ export default function Home() {
 
         <div className="shell hero-bottom">
           <span>Rio Grande Valley, Texas</span>
-          <a href="#projects">Scroll to explore ↓</a>
+          <a href="#experience">Scroll to explore ↓</a>
         </div>
+      </section>
+
+      {/* EXPERIENCE */}
+      <section
+        className="shell section"
+        id="experience"
+      >
+        <div className="portfolio-section-intro">
+          <span className="portfolio-section-kicker">
+            WHERE I&apos;VE CONTRIBUTED
+          </span>
+
+          <h2>Experience.</h2>
+
+          <p>
+            Building software and learning from
+            real teams and challenges.
+          </p>
+        </div>
+
+        <ExperienceTabs />
       </section>
 
       {/* SELECTED WORK */}
@@ -174,27 +195,6 @@ export default function Home() {
           View all project details
           <ArrowUpRight size={16} />
         </Link>
-      </section>
-
-      {/* EXPERIENCE */}
-      <section
-        className="shell section"
-        id="experience"
-      >
-        <div className="portfolio-section-intro">
-          <span className="portfolio-section-kicker">
-            WHERE I&apos;VE CONTRIBUTED
-          </span>
-
-          <h2>Experience.</h2>
-
-          <p>
-            Building software and learning from
-            real teams and challenges.
-          </p>
-        </div>
-
-        <ExperienceTabs />
       </section>
 
       {/* CONTACT */}
