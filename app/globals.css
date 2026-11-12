@@ -17,8 +17,8 @@
   --panel-soft: #171b17;
 
   --text: #f1f3ef;
-  --muted: #acb7ae;
-  --faint: #78867b;
+  --muted: #c3cec5;
+  --faint: #9aab9e;
 
   --line: rgba(180, 210, 187, 0.17);
 
@@ -30,6 +30,7 @@
   --serif: Georgia, "Times New Roman", serif;
   --mono: "Cascadia Code", "SFMono-Regular",
     Consolas, "Liberation Mono", monospace;
+  --heading: #f1f3ef;
 }
 
 /* -----------------------------------------------------
@@ -642,7 +643,7 @@ button {
 .contact-strip h2 {
   margin: 0;
 
-  color: var(--text);
+  color: var(--heading);
   font-family: var(--serif);
 
   font-size: clamp(40px, 5vw, 58px);
@@ -753,7 +754,7 @@ button {
 
 .experience-heading h3 {
   margin: -2px 0 1px;
-  color: var(--text);
+  color: var(--heading);
   font-size: 16px;
 }
 
@@ -906,7 +907,7 @@ button {
   min-height: 48px;
   margin: 0 5px 10px;
 
-  color: var(--text);
+  color: var(--heading);
   font-size: 15px;
   line-height: 1.5;
 }
@@ -930,7 +931,7 @@ button {
 .home-about h2 {
   margin: 0;
 
-  color: var(--text);
+  color: var(--heading);
   font-family: var(--serif);
   font-weight: 400;
 
@@ -1037,7 +1038,7 @@ button {
 .page-title {
   margin: 0 0 50px;
 
-  color: var(--text);
+  color: var(--heading);
   font-family: var(--serif);
 
   font-size: clamp(58px, 8vw, 88px);
@@ -1275,7 +1276,7 @@ button {
 .project-case-copy h2 {
   margin: 0;
 
-  color: var(--text);
+  color: var(--heading);
   font-family: var(--serif);
 
   font-size: clamp(31px, 4vw, 44px);

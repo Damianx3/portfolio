@@ -60,7 +60,7 @@
   line-height: 1.03;
 
   letter-spacing: -0.065em;
-  color: var(--text);
+  color: var(--heading);
 }
 
 .portfolio-v2 .hero-v2 h1 .wave {
@@ -83,7 +83,7 @@
   line-height: 1.4;
 
   letter-spacing: -0.03em;
-  color: var(--text);
+  color: var(--heading);
 }
 
 .portfolio-v2 .hero-v2 .hero-intro {
