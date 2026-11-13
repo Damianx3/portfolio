@@ -1045,7 +1045,8 @@ html[data-theme="light"]
   color: var(--heading);
 }
 
-.portfolio-v2 .home-contact {
+.portfolio-v2 .home-contact,
+.portfolio-v2 .projects-section {
   border-top: 0;
 }
 
